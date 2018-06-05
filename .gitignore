@@ -1,0 +1,5 @@
+/Tensorflow/__pycache__/*
+.ipynb_checkpoints
+/Tensorflow/dataset/*
+/Tensorflow/model/*
+
