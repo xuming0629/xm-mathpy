@@ -11,7 +11,7 @@ import mnist_inference
 
 # 配置神经网络的参数
 BATCH_SIZE = 100
-LEARNING_RATE_BASE = 0.01
+LEARNING_RATE_BASE = 0.001
 LEARNING_RATE_DECAY = 0.99
 REGULARAZTION_RATE = 0.0001
 TRAINING_STEPS = 30000
@@ -65,6 +65,8 @@ def train(mnist):
                 # 保存当前的模型。注意这里隔出了global_step参数，这样可以让每个被保存模型的文件名末尾加上训练的轮数，比如“model.ckpt-1000”表示训练1000轮后得到的模型
                 saver.save(sess, os.path.join(MODEL_SAVE_PATH, MODEL_NAME), global_step=global_step)
 
+
+## 定义主函数,初始化数据集, 调用测试函数
 
 def main(argv=None):
     mnist = input_data.read_data_sets("dataset", one_hot=True)
